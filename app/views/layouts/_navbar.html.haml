@@ -1,0 +1,27 @@
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      .brand
+        - if current_user
+          %a{:href => "#"}
+            #{current_user.username}
+        - else
+          %a{:"data-toggle" => "modal", :href => "#register"}
+            %strong Join our community today!
+            %span Create an account
+      .nav-collapse
+        %ul.nav
+          - if current_user
+            %li
+              %a.new-guide.btn{:href => "/builds/new"} New build
+            %li
+              %a.logout.btn{:href => "/logout"} Logout
+          - else
+            %li.error
+              Error
+            %li
+              %input.username{:value => "username"}
+            %li
+              %input.password{:value => "password", :type => "password"}
+            %li
+              %a.login.btn{:href => "#"} Login  

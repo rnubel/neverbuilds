@@ -1,0 +1,35 @@
+.builds
+  .row
+    .span3.sidebar
+      %ul.nav
+        %li.meta
+          .left Sort by
+          .right
+            %a.filter.active{:href => "#"} Date
+            %a.filter{:href => "#"} Likes
+        %li.meta
+          .left Type
+          .right
+            %a.filter.active{:href => "#"} All
+            %a.filter{:href => "#"} PVE
+            %a.filter{:href => "#"} PVP
+        %li.search
+          %input.searchbox
+        %li.class-list
+          %div
+            %h1 Classes
+            %ul#classes
+              - classes.each do |c|
+                %li
+                  %a{:href => "#", :rel => "#{c}", :class => "#{underscore(c)}"}= c
+              %li
+                %a.all.active{:href => "#"} All
+    .span9.all-builds
+      .header
+        %span.title All Builds
+        %span.count count
+        %span.ajax 
+      .build-list
+        .no-builds
+          No builds are found.
+        = render "builds"

@@ -1,0 +1,24 @@
+#register.modal.fade.hide{:role => "dialog", :tabindex => "-1"}
+  .modal-header
+    %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+    %h3 Register
+  .modal-body
+    %p By registering you create your own builds, share them with others, like other builds, and more. The site is in beta, please <a href="mailto:neverbuilds@gmail.com">email me</a> if you find any issues.
+    = form_for(User.new) do |f|
+      .errors.alert.alert-error
+        %i.icon.icon-exclamation-sign
+        .error
+      %div
+        %span 
+          Required
+          %strong *
+        = f.text_field :username, :placeholder => "username", :class => "username", :type => "text"
+        = f.password_field :password, :placeholder => "password", :class => "password", :type => "password"
+        = f.password_field :password_again, :placeholder => "password again", :class => "password_again", :type => "password"
+      %div
+        %span Optional information
+        = f.text_field :email, :placeholder => "email address", :class => "email", :type => "text"
+        = f.text_field :account, :placeholder => "account name", :class => "account", :type => "text"
+        = f.text_field :character, :placeholder => "character name", :class => "character", :type => "text"
+      %div
+        = f.submit "Submit", :class => "btn btn-primary btn-large" 

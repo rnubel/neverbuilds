@@ -1,0 +1,30 @@
+source 'http://rubygems.org'
+
+gem 'rails', '3.2.13'
+
+gem 'rdiscount'
+gem "therubyracer"
+gem "haml", ">= 3.0.0"
+gem "bcrypt-ruby", :require => "bcrypt"
+gem 'opinio'
+gem 'kaminari'
+gem 'newrelic_rpm'
+
+group :development do
+  gem 'pg'
+end
+
+group :production do
+  gem 'mysql2'
+end
+
+group :assets do
+  gem 'jquery-rails', '>= 1.0.12'
+  gem 'sass-rails',   '~> 3.2.6'
+  gem 'bootstrap-sass', '~> 2.3.1.0'
+  gem 'uglifier', '>= 1.0.3'
+end
+
+group :test do
+  gem 'turn', '0.8.2', :require => false
+end

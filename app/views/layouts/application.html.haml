@@ -1,0 +1,36 @@
+!!! 5
+%html
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
+    %title Neverbuilds
+    %meta{:content => "brous", :name => "author"}
+    %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}
+    %script{:src => "http://use.typekit.com/lvi4fxm.js", :type => "text/javascript"}
+    :javascript
+      try{Typekit.load();}catch(e){} 
+    = stylesheet_link_tag "application"
+    = csrf_meta_tag
+  %body
+    = render "layouts/navbar"
+
+    .container
+      = render "layouts/nav" 
+      = yield
+
+    .footer 
+      The website is still in beta. Please contact <a href="mailto:neverbuilds@gmail.com">brous</a> if you find any bugs
+
+    = render "layouts/register" if !current_user
+
+    = javascript_include_tag "application"
+    :javascript
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-9821208-4']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
