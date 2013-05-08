@@ -14,9 +14,9 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       session[:user_id] = @user.id
-      render :json => { "status" => "success", "redirect" => "/"}
+      render :json => { "status" => "success", "location" => "/"}
     else
-      render :json => { "status" => "failure", "errors" => @user.errors.full_messages}
+      render :json => { "status" => "failure", "errors" => @user.errors.full_messages.join(', ')}
     end
   end
 end

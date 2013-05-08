@@ -42,25 +42,74 @@
         &.alert 
           margin-bottom: 10px
           padding: 5px
-          text-shadow: none
-          +buttonBackground($darkblue, $blue)
+          text-shadow: 0px 1px 1px #000
+          background: $darkblue
           border: none
           color: #fff
+          font-weight: bold
           i 
             float: left 
             margin-right: 5px
             margin-top: 3px
             +opacity(40)
           .error 
-      span
+      h1
         font-size: 11px
         font-weight: bold
         color: #aaa
         text-transform: uppercase
         margin: 10px 0px 
         line-height: 22px   
+        display: block
+        position: relative
+        z-index: 1
+        a 
+          color: #aaa
+          &:hover
+            color: #fff
+          &.open
+            span:before
+              content: ""
+              border-left: 4px solid transparent
+              border-right: 4px solid transparent
+              border-bottom: none
+              border-top: 6px solid #888 
+              margin-right: 6px
+              display: inline-block 
+        span
+          position: relative
+          z-index: 5
+          background: #000 
+          padding-right: 10px
+          &.optional:before
+            content: ""
+            border-top: 4px solid transparent
+            border-bottom: 4px solid transparent
+            border-left: 6px solid #888
+            border-right: none
+            margin-right: 6px
+            display: inline-block  
+          &.required:before
+            content: ""
+            border-left: 4px solid transparent
+            border-right: 4px solid transparent
+            border-bottom: none
+            border-top: 6px solid #888
+            margin-right: 4px
+            display: inline-block 
+        &:before
+          content: ""
+          display: block
+          border-top: solid 1px #333
+          width: 100%
+          height: 1px
+          position: absolute
+          top: 50%
+          z-index: 1
         strong
           color: red
+      .options
+        display: none
       input[type=text], input[type=password]
         width: 100%
         font-size: 16px
@@ -75,14 +124,18 @@
         display: inline-block
         &.username, &.character
           background: #fff image-url("username.png") no-repeat 8px 50%
+          &.error
+            background: #fff image-url("username_error.png") no-repeat 8px 50%
         &.account
           background: #fff image-url("account_name.png") no-repeat 8px 50%
         &.email
           background: #fff image-url("email.png") no-repeat 8px 50%
+          &.error
+            background: #fff image-url("email_error.png") no-repeat 8px 50%
         &.password, &.password_again
           background: #fff image-url("password.png") no-repeat 8px 50%
-        &.error
-          border-left: 9px solid $darkblue
+          &.error
+            background: #fff image-url("password_error.png") no-repeat 8px 50%
       input[type=submit] 
         +border-radius(4px)
         font-family: "proxima-nova"

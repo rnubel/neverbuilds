@@ -4,7 +4,7 @@
       .brand
         - if current_user
           %a{:href => "#"}
-            #{current_user.username}
+            Welcome back, #{current_user.username}
         - else
           %a{:"data-toggle" => "modal", :href => "#register"}
             %strong Join our community today!

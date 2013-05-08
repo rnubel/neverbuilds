@@ -8,8 +8,8 @@ class User < ActiveRecord::Base
   validates_presence_of :password, :on => :create
   validates_presence_of :username, :on => :create
   validates_uniqueness_of :username
-  validates :email, :presence => true, :uniqueness => true
-  validates_format_of :email, :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i, :on => :create, :message => "is invalid"  
+  #validates_uniqueness_of :email
+  #validates_format_of :email, :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i, :on => :create, :message => "is invalid"  
 
   has_many :builds
   has_many :comments
