@@ -1,5 +1,7 @@
 .builds
   .row
+    .span12.template
+  .row
     .span3.sidebar
       %ul.nav
         %li.meta
@@ -61,4 +63,4 @@
             * List item 1
             * List item 2
 
-= render "picker" unless session[:class] && session[:race]
+= render "picker"

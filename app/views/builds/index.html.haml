@@ -32,4 +32,15 @@
       .build-list
         .no-builds
           No builds are found.
-        = render "builds"
+        %ul#builds
+          - 10.times do
+            %li
+              %a{:href => '#', :class => "trickster_rogue", :style => "display: block;"}
+                .name
+                  %strong Biggest crits of all time
+                .meta
+                  by 
+                  %strong brous
+                  on #{format_date(Date.today)}
+                  %div great weapon fighter
+                  %div pvp 

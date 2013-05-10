@@ -32,10 +32,8 @@ nw.race_picker = function() {
         },  
         type: "post",
         url: "/builds/pick",
-        data: {"race": $('#race').val(), "class": $('#class').val()},
-        success: function(json){
-          $('#picker').modal('hide');
-        },
+        data: {"race":  $('#race').val(), 
+               "class": $('#class').val()},
         dataType: "json"
       }); 
     });

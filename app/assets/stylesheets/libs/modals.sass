@@ -241,16 +241,15 @@
           color: #fff
           &:hover
             +opacity(80)
-        i:before
-          content: ''
-          border-top: 6px solid transparent
-          border-bottom: 6px solid transparent
-          border-right: none
-          border-left: 8px solid #444
-          margin-right: 6px
-          margin-left: 5px
-          display: inline-block  
-          margin-top: -6px
+          span
+            font-weight: bold
+        i
+          +opacity(30)
+          margin-top: 9px
+          margin-left: 3px
+          margin-right: 3px
+        span
+          font-weight: normal
     .modal-body
       .class-picker
         li

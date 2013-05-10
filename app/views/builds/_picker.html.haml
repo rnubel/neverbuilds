@@ -1,7 +1,8 @@
 #picker.modal.fade.hide{:role => "dialog", :tabindex => "-1"}
   .race
     .modal-header
-      %h3 Choose a Race
+      %h3 
+        %span Choose a Race
     .modal-body
       %ul.list.race-picker
         - races.each do |race|
@@ -18,8 +19,8 @@
       %h3 
         %a.go-back{:href => '#'}
           %span.picked-race Race
-        %i.arrow
-        Choose a Class
+        %i.icon.icon-white.icon-chevron-right
+        %span Choose a Class
     .modal-body
       %ul.list.class-picker
         - classes.each do |c|
