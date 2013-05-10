@@ -26,15 +26,11 @@ nw.race_picker = function() {
       e.preventDefault();
       $('#class').val($(this).attr('rel'));
       $.ajax({
-        headers: {
-          'X-Transaction': 'POST Example',
-          'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
-        },  
         type: "post",
         url: "/builds/pick",
         data: {"race":  $('#race').val(), 
                "class": $('#class').val()},
-        dataType: "json"
+        dataType: "script"
       }); 
     });
   };

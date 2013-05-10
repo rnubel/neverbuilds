@@ -5,9 +5,7 @@ Neverbuilds::Application.routes.draw do
     opinio
     collection do
       post :pick
-    end
-    member do
-      get :reload_comments
+      get :pick
     end
   end
 

@@ -25,7 +25,7 @@
       %ul.list.class-picker
         - classes.each do |c|
           %li
-            %a{:href => '#', :"data-remote" => "true", :rel => "#{underscore(c)}"}
+            %a{:href => '#', :rel => "#{underscore(c)}"}
               %span{:class => "image image-#{underscore(c)}"}
               %span.class= c
       %input#class{:type => "hidden"}
