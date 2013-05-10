@@ -1,1 +1,49 @@
-FUCKING #{@class}
+.meta
+  .character
+    %span.image{:class => "#{race}"}
+    .info
+      %span 
+        %strong #{current_user.username.humanize}'s 
+        #{race.humanize}
+      %span
+        %i.class-image{:class => "#{character_class}"}
+        = character_class.titleize
+
+.hud
+  .at_wills
+    %a.button{:href => '#'}
+  %ul#hud
+    %li
+      %span.type at wills
+      %a.button.at_will{:href => '#'}
+        %span.change
+        %span.image
+      %a.button.at_will{:href => '#'}
+        %span.change
+        %span.image
+    %li
+      %span.type encounters
+      %a.button.encounter{:href => '#'}
+        %span.change
+        %span.image
+      %a.button.encounter{:href => '#'}
+        %span.change
+        %span.image
+      %a.button.encounter{:href => '#'}
+        %span.change
+        %span.image
+    %li
+      %span.type dailys
+      %a.button.daily{:href => '#'}
+        %span.image
+      %a.button.daily{:href => '#'}
+        %span.image
+    %li
+      %span.type class features
+      %a.button.skill{:href => '#'}
+        %span.change
+        %span.image
+      %a.button.skill{:href => '#'}
+        %span.change
+        %span.image
+

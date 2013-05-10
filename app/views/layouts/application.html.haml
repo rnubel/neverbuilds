@@ -12,16 +12,16 @@
     = stylesheet_link_tag "application"
     = csrf_meta_tag
   %body
-    = render "layouts/navbar"
+    = render :partial => "layouts/navbar"
 
     .container
-      = render "layouts/nav" 
+      = render :partial => "layouts/nav" 
       = yield
 
     .footer 
       The website is still in beta. Please contact <a href="mailto:neverbuilds@gmail.com">brous</a> if you find any bugs
 
-    = render "layouts/register" if !current_user
+    = render :partial => "layouts/register" unless current_user
 
     = javascript_include_tag "application"
     :javascript

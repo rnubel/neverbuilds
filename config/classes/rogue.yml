@@ -36,7 +36,7 @@ powers:
       rank_2: "Damage: +10%" 
       rank_3: "Damage: +10%" 
     sneak_attack:
-      type: class
+      type: skill
       image: default.png
       desc: "Increase your Run Speed by 10% while Stealthed."
       rank_2: "Damage: +10%" 
@@ -85,13 +85,13 @@ powers:
       rank_2: "Decoy Hitpoints: +10%, Action Points from Decoy: +1%"
       rank_3: "Decoy Hitpoints: +10%, Action Points from Decoy: +1%"
     first_strike:
-      type: class
+      type: skill
       image: default.png
       desc: "Your first attack in combat deals 5% additional damage"
       rank_2: "Damage: +5%"  
       rank_3: "Damage: +5%"  
     tenacious_concealment:
-      type: class
+      type: skill
       image: default.png
       desc: "Reduces Stealth loss from incoming damage by 30%"
       rank_2: "Stealth Loss: -30%"
@@ -114,7 +114,7 @@ powers:
       rank_2: "Damage: +10%"  
       rank_3: "Damage: +10%"  
     tactics:
-      type: class
+      type: skill
       image: default.png
       desc: "Increases your Action Point Gain by 5%"
       rank_2: "Action Point Gain: +5%"
@@ -130,7 +130,7 @@ powers:
       rank_2: "Buff Duration: +1s"
       rank_3: "Buff Duration: +1s"
     inflitrators_action:
-      type: class
+      type: skill
       image: default.png
       paragon: "Inflitrator"
       desc: "Every time you do a daily, gain Combat Advantage for 5 secs."
@@ -149,7 +149,7 @@ powers:
       type: encounter
       image: default.png
       range: "40' range"
-      desc: "Attack your opponent from a medium range, Pushing them slightly. This class has 3 encounter charges."
+      desc: "Attack your opponent from a medium range, Pushing them slightly. This skill has 3 encounter charges."
       bonus: "Briefly Stuns the target, and cost no charges."
       rank_2: "Damage: +10%"
       rank_3: "Damage: +10%"
@@ -163,7 +163,7 @@ powers:
       rank_3: "Damage: +10%"
   40:
     skillful_inflitrator:
-      type: class
+      type: skill
       paragon: "Inflitrator"
       image: default.png
       desc: "Increase your base run speed by 5%, and your Deflect Chance and Crit Chane by 1%."
@@ -197,7 +197,7 @@ powers:
       rank_3: "Damage: +10%"
   50:
     invisible_infiltrator:
-      type: class
+      type: skill
       paragon: "Inflitrator"
       image: default.png
       desc: "After using a daily, refills your Stealth meter and grants a 5% damage bonus for 5 seconds."

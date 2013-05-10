@@ -14,24 +14,31 @@ class BuildsController < ApplicationController
   end
 
   def update
-    updates = params[:build]
-    @build.update_attributes(updates)
-    render :json => { "status" => "success", "redirect" => build_path(@build)}
+    @build.update_attributes(params[:build])
+    render :json => {"status" => "success", 
+                     "redirect" => build_path(@build)}
   end
 
   def create
     @build = Build.new(params[:guide])
     @build.user = current_user
     if @build.save
-      render :json => { "status" => "success", "redirect" => "/builds/#{@build.id}"}
+      render :json => {"status" => "success", 
+                       "redirect" => "/builds/#{@build.id}"}
     else
-      render :json => { "status" => "failure", "errors" => @build.errors.full_messages}
+      render :json => {"status" => "failure", 
+                       "errors" => @build.errors.full_messages}
     end
   end 
 
   def pick
     @race = params[:race]
     @class = params[:class]
+
+    session[:race] = @race
+    session[:class] = @class
+
+    @config = YAML.load_file("config/classes/#{@class}")    
 
     respond_to do |format|
       format.js
