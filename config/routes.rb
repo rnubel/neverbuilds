@@ -3,11 +3,11 @@ Neverbuilds::Application.routes.draw do
 
   resources :builds do
     opinio
+    collection do
+      post :pick
+    end
     member do
-      get :select
       get :reload_comments
-      post :rate
-      get :save
     end
   end
 

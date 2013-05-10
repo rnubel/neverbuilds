@@ -1,7 +1,7 @@
 class BuildsController < ApplicationController
   include Opinio::Controllers::Helpers
 
-  before_filter :authorize, :only => [:create, :update, :delete, :rate]
+  before_filter :authorize, :only => [:create, :update, :new, :delete]
   before_filter :find_build, :except => [:index]
 
   def index
@@ -29,6 +29,15 @@ class BuildsController < ApplicationController
       render :json => { "status" => "failure", "errors" => @build.errors.full_messages}
     end
   end 
+
+  def pick
+    @race = params[:race]
+    @class = params[:class]
+
+    respond_to do |format|
+      format.js
+    end 
+  end
 
   def reload_comments
     @build = Build.find(params[:id])

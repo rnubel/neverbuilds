@@ -1,0 +1,30 @@
+#picker.modal.fade.hide{:role => "dialog", :tabindex => "-1"}
+  .race
+    .modal-header
+      %h3 Choose a Race
+    .modal-body
+      %ul.list.race-picker
+        - races.each do |race|
+          %li
+            %a{:href => '#', :rel => "#{underscore(race)}"}
+              %span{:class => "image image-#{underscore(race)}"}
+              %span.race= race
+      %input#race{:type => "hidden"}
+  .class
+    .modal-header
+      %a.close.go-back{:href => '#'} 
+        %i.icon.icon-white.icon-chevron-left
+        Back
+      %h3 
+        %a.go-back{:href => '#'}
+          %span.picked-race Race
+        %i.arrow
+        Choose a Class
+    .modal-body
+      %ul.list.class-picker
+        - classes.each do |c|
+          %li
+            %a{:href => '#', :"data-remote" => "true", :rel => "#{underscore(c)}"}
+              %span{:class => "image image-#{underscore(c)}"}
+              %span.class= c
+      %input#class{:type => "hidden"}

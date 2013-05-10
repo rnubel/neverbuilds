@@ -1,7 +1,8 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.2.13'
-
+gem 'jquery-rails', '~> 2.1'
+gem 'thin'
 gem 'rdiscount'
 gem "therubyracer"
 gem "haml", ">= 3.0.0"
@@ -19,7 +20,6 @@ group :production do
 end
 
 group :assets do
-  gem 'jquery-rails', '>= 1.0.12'
   gem 'sass-rails',   '~> 3.2.6'
   gem 'bootstrap-sass', '~> 2.3.1.0'
   gem 'uglifier', '>= 1.0.3'

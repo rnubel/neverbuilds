@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     respond_to do |format|
       format.json {
         if success
-          render :json => {"redirect" => request.env["HTTP_REFERER"], "user" => @user, "status" => "success"}
+          render :json => {"status" => "success", "location" => request.env["HTTP_REFERER"]}
         else
           render :json => {"status" => "failure", "errors" => "Username or password incorrect"}
        end

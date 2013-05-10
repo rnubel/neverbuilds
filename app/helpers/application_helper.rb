@@ -22,6 +22,10 @@ module ApplicationHelper
     return server.downcase.strip.gsub(' ', '_').gsub(/[^\w-]/, '')
   end 
 
+  def races
+    ["Drow", "Dwarf", "Half Elf", "Human", "Halfling", "Tiefling", "Wood Elf"]
+  end
+
   def classes
     ["Trickster Rogue", "Devoted Cleric", "Guardian Fighter", "Great Weapon Fighter", "Control Wizard"]
   end
