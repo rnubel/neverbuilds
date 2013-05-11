@@ -11,7 +11,8 @@
 
 .hud
   .at_wills
-    %a.button{:href => '#'}
+    - at_wills(character_class).each do |will|
+      %a.button{:href => '#'}= will
   %ul#hud
     %li
       %span.type at wills

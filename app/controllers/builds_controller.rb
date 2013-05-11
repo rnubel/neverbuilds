@@ -38,8 +38,6 @@ class BuildsController < ApplicationController
     session[:race] = @race
     session[:class] = @class
 
-    @config = YAML.load_file("config/classes/#{@class}")    
-
     respond_to do |format|
       format.js
     end 
